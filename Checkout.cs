@@ -4,7 +4,7 @@ namespace CheckoutKata;
 
 public class Checkout
 {
-    private List<ItemModel> ItemList;
+    public List<ItemModel> ItemList = new List<ItemModel>();
 
     public decimal Total()
     {
