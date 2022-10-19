@@ -2,11 +2,11 @@
 
 namespace CheckoutKata;
 
-public class Checkout
+public class Checkout 
 {
     public List<ItemModel> ItemList = new List<ItemModel>();
 
-    public decimal Total()
+    public decimal? Total()
     {
         decimal? total = 0m;
         decimal? remainder = 0m;
@@ -68,8 +68,8 @@ public class Checkout
         //if qty reaches offer level, add offer price, set price to null/0
         
     }
-}
- 
+
+
 
 //if qty is is divisible by offer price and has matching SKU use offer price * remainder unless 0 
 /*public class SpecialOffer
