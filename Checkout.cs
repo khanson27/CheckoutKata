@@ -8,9 +8,34 @@ public class Checkout
 
     public decimal Total()
     {
+        decimal? total = 0m;
+        decimal? remainder = 0m;
+        decimal? dividePrice = 0m;
+        foreach (ItemModel item in ItemList)
+        {
+            if (item.Qty == 1)
+            {
+                total += item.Price;
+            }
+            else if (item.OfferCondition == null)
+            {
+                total += (item.Price * item.Qty);
+            }
+            else if (item.Qty % item.OfferCondition == 0 )
+            {
+                dividePrice = item.Qty / item.OfferCondition;
+                total += item.OfferPrice * dividePrice;
+            }
+            else if (item.Qty % item.OfferCondition != 0)
+            {
+                remainder = item.Qty % item.OfferCondition;
+                dividePrice = (item.Qty - remainder) / item.OfferCondition;
+                total += (item.OfferPrice * dividePrice) + (item.Price * remainder);
+            }
+        }
         //add all items prices if  offerprice  is always null add all
         //if offer price is not null, add all prices and offer prices
-        return 0m;
+        return total;
     }
     
         public void Scan(ItemModel item)
