@@ -7,4 +7,13 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <Compile Update="Tests\Usings.cs">
+        <Link>CheckoutKataTests\Usings.cs</Link>
+      </Compile>
+      <Compile Update="Tests\UnitTest1.cs">
+        <Link>CheckoutKataTests\UnitTest1.cs</Link>
+      </Compile>
+    </ItemGroup>
+
 </Project>
