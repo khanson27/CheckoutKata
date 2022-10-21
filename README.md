@@ -1,5 +1,5 @@
 # CheckoutKata
-#Background
+# Background
 This Kata has been set up using the Console solution in C# as to test the solution while problem solving, and for potentially setting up a console application in the future. I have used xUnit and Fluent Assertions for testing purposes. 
 
 # Deliverables
